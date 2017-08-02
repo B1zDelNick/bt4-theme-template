@@ -105,9 +105,10 @@ module.exports = function(grunt) {
                 options: {
                     sassDir: '_/sass',
                     cssDir: '_/css',
+                    specify: ['_/sass/style.scss'],
                     outputStyle: 'expanded',
                     sourcemap: true,
-                    require: ['susy']
+                    require: ['susy'],
                 }
             },
             prod: {
@@ -118,6 +119,20 @@ module.exports = function(grunt) {
                     require: ['susy']
                 }
             },
+        },
+        cssmin: {
+            dev: {
+                options: {
+                    sourceMap: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '_/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '_/css',
+                    ext: '.css'
+                }]
+            }
         },
         clean: {
             js: ['./js/scripts.min.js', './js/scripts.min.js.map'],
