@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                     sourceMap: true,
                     compress: false,
                     beautify: true,
-                    sourceMapName: './js/scripts.min.map'
+                    sourceMapName: './js/scripts.min.js.map'
                 },
                 files: {
                     './js/scripts.min.js': [
@@ -120,7 +120,7 @@ module.exports = function(grunt) {
             },
         },
         clean: {
-            js: ['./js/*.js'],
+            js: ['./js/scripts.min.js', './js/scripts.min.js.map'],
             css: ['_/css/style.css', '_/css/style.css.map', './css/style.min.css', './css/style.min.css.map']
         },
         watch: {
